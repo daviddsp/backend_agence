@@ -13,7 +13,7 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::group(['prefix' => 'v1'], function (){
+Route::group(['middleware'=>'cors','prefix' => 'v1'], function (){
     Route::get('/consultores', 'ConsultoresController@consultores');
     //Route::get('/receta/{mont1_start}/{age1_end}/{mont2_inicio}/{age2_inicio}/{co_usuario}', 'ConsultoresController@recetaLiquida');
     Route::get('/consolidado/{consultor?}/{fecha_inicio}/{fecha_fin}', 'ConsultoresController@consolidadoConsultor');
